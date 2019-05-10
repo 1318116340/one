@@ -1,0 +1,52 @@
+// element 样式补丁
+
+.el-card {
+  &.is-always-shadow {
+    box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5);
+  }
+  &.is-hover-shadow {
+    &:hover {
+      box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5);
+    }
+  }
+}
+
+.el-menu--horizontal {
+  border-bottom: none !important;
+}
+
+.el-tabs__item:focus.is-active.is-focus:not(:active) {
+  box-shadow: none !important;
+}
+.el-table .cell{
+  padding: 0 5px;
+}
+.el-tag{
+  font-size: 13px;
+}
+.el-picker-panel [slot=sidebar], .el-picker-panel__sidebar{
+  right: 0;
+  border-left: 1px solid #e4e4e4;
+}
+.el-picker-panel [slot=sidebar]+.el-picker-panel__body, .el-picker-panel__sidebar+.el-picker-panel__body{
+  margin-left: 0;
+  margin-right: 110px;
+}
+/*全局分页样式*/
+.pageController {
+  padding: 20px 0 10px;
+  text-align: center;
+  background-color: #fff;
+  .el-icon-refresh{
+    display: inline-block;
+    font-size: 22px;
+    vertical-align: top;
+    margin: 5px 15px 0 0;
+    color: #606266;
+    cursor: pointer;
+  }
+  .el-pagination{
+    display: inline-block;
+    overflow: hidden;
+  }
+}

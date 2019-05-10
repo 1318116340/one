@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>icon.ico">
+  <style>
+    html,
+    body,
+    #app {
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      width: 100%;
+      min-width: 1200px;
+    }
+
+    body {
+      background-color: #000;
+    }
+    .css3-loader {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .pacman {
+      position: relative;
+    }
+
+    .pacman>div:nth-child(2) {
+      -webkit-animation: pacman-balls 1s 0s infinite linear;
+      animation: pacman-balls 1s 0s infinite linear;
+    }
+
+    .pacman>div:nth-child(3) {
+      -webkit-animation: pacman-balls 1s 0.33s infinite linear;
+      animation: pacman-balls 1s 0.33s infinite linear;
+    }
+
+    .pacman>div:nth-child(4) {
+      -webkit-animation: pacman-balls 1s 0.66s infinite linear;
+      animation: pacman-balls 1s 0.66s infinite linear;
+    }
+
+    .pacman>div:nth-child(5) {
+      -webkit-animation: pacman-balls 1s 0.99s infinite linear;
+      animation: pacman-balls 1s 0.99s infinite linear;
+    }
+
+    .pacman>div:first-of-type {
+      width: 0px;
+      height: 0px;
+      border-right: 25px solid transparent;
+      border-top: 25px solid #fff;
+      border-left: 25px solid #fff;
+      border-bottom: 25px solid #fff;
+      border-radius: 25px;
+      -webkit-animation: rotate_pacman_half_up 0.5s 0s infinite;
+      animation: rotate_pacman_half_up 0.5s 0s infinite;
+    }
+
+    .pacman>div:nth-child(2) {
+      width: 0px;
+      height: 0px;
+      border-right: 25px solid transparent;
+      border-top: 25px solid #fff;
+      border-left: 25px solid #fff;
+      border-bottom: 25px solid #fff;
+      border-radius: 25px;
+      -webkit-animation: rotate_pacman_half_down 0.5s 0s infinite;
+      animation: rotate_pacman_half_down 0.5s 0s infinite;
+      margin-top: -50px;
+    }
+
+    .pacman>div:nth-child(3),
+    .pacman>div:nth-child(4),
+    .pacman>div:nth-child(5),
+    .pacman>div:nth-child(6) {
+      background-color: #fff;
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      margin: 2px;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      -webkit-transform: translate(0, -6.25px);
+      -ms-transform: translate(0, -6.25px);
+      transform: translate(0, -6.25px);
+      top: 25px;
+      left: 100px;
+    }
+
+    .main-loading__tips {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 14px;
+      margin-top: 60px;
+      color: #fff;
+    }
+
+    @-webkit-keyframes rotate_pacman_half_up {
+      0% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+
+      50% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+    }
+
+    @keyframes rotate_pacman_half_up {
+      0% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+
+      50% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+    }
+
+    @-webkit-keyframes rotate_pacman_half_down {
+      0% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+
+      50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+    }
+
+    @keyframes rotate_pacman_half_down {
+      0% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+
+      50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+    }
+
+    @-webkit-keyframes pacman-balls {
+      75% {
+        opacity: 0.7;
+      }
+
+      100% {
+        -webkit-transform: translate(-100px, -6.25px);
+        transform: translate(-100px, -6.25px);
+      }
+    }
+
+    @keyframes pacman-balls {
+      75% {
+        opacity: 0.7;
+      }
+
+      100% {
+        -webkit-transform: translate(-100px, -6.25px);
+        transform: translate(-100px, -6.25px);
+      }
+    }
+  </style>
+  <link href="https://cdn.bootcss.com/element-ui/2.6.1/theme-chalk/index.css" rel="stylesheet">
+  <!-- ua -->
+  <script src="<%= BASE_URL %>script/ua-parser.min.js"></script>
+  <script src="<%= BASE_URL %>script/ua.js"></script>
+  <script src="https://cdn.bootcss.com/vue/2.6.6/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/vue-router/3.0.2/vue-router.min.js"></script>
+  <script src="https://cdn.bootcss.com/element-ui/2.6.1/index.js"></script>
+  <script src="https://cdn.bootcss.com/lodash.js/4.17.12-pre/lodash.min.js"></script>
+</head>
+
+<body>
+  <noscript>
+    <strong>
+      很抱歉，如果没有 JavaScript 支持，生财有道 将不能正常工作。请启用浏览器的 JavaScript 然后继续。推荐使用谷歌浏览器
+    </strong>
+  </noscript>
+
+  <div id="app">
+    <div class="css3-loader">
+      <div class="loader-inner pacman">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="main-loading__tips">资源正在加载中，请耐心等候</div>
+  </div>
+</body>
+
+</html>

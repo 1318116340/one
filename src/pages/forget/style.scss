@@ -1,0 +1,97 @@
+@import '~@/assets/style/public.scss';
+
+.forget-page {
+  background: #ffffff url('~@/pages/login/image/bg.jpg') no-repeat center center;
+  background-size: 100% 100%;
+  height: 100%;
+  position: relative; // 层
+  .layer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    &.flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  // 背景
+  .bg {
+    canvas {
+      display: block;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+
+  // logo
+  .logo-group {
+    margin-top: -75px - 70px;
+    position: relative;
+    top: 155px;
+    img {
+      height: 54px;
+      display: block;
+      margin: 0 auto 15px;
+    }
+    .title {
+      font-size: 26px;
+      text-align: center;
+    }
+  }
+
+  // 登录表单
+  .form-group {
+    width: 460px; // 重新设置卡片阴影
+
+    .el-card {
+      box-shadow: 0 0 8px 0 rgba(232, 237, 250, .6), 0 2px 4px 0 rgba(232, 237, 250, .5);
+
+      .el-card__body {
+        padding: 180px 50px 20px;
+      }
+    }
+
+    .el-form {
+      width: 320px;
+      margin: 10px auto;
+    }
+
+    // 输入框左边的图表区域缩窄
+    .el-input-group__prepend {
+      padding: 0px 14px;
+    }
+
+    .el-input__icon {
+      width: 35px;
+      font-size: 16px;
+    }
+
+    .el-input--prefix .el-input__inner {
+      padding-left: 40px;
+    }
+
+    .forget-btn {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  // 注册按钮
+  .login-btn {
+    display: block;
+    margin: 10px auto 0;
+  }
+}
+// 提示
+.register-popover {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 12px;
+  li:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
